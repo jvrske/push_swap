@@ -8,6 +8,7 @@ The challenge is to find the most efficient way possible (with the smallest numb
 This project was developed following all norm rules and includes the bonus part.
 
 🧠 Strategy Used
+
 🔹 Sending from A to B — Chunks
 
 To move numbers from stack A to stack B, I used the chunk strategy:
@@ -62,6 +63,7 @@ To compile the bonus:
 make bonus
 
 ▶️ How to Run
+
 push_swap
 ./push_swap 3 2 1
 
