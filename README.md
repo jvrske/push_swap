@@ -2,12 +2,15 @@ Push Swap
 
 📌 Description
 
+
 push_swap is a project whose goal is to sort a stack of integers using a limited set of instructions and two stacks: A and B.
 The challenge is to find the most efficient way possible (with the smallest number of moves) to sort the numbers in ascending order in stack A.
 
 This project was developed following all norm rules and includes the bonus part.
 
+
 🧠 Strategy Used
+
 
 🔹 Sending from A to B — Chunks
 
@@ -33,7 +36,9 @@ Ensures that elements return to A already close to their correct position.
 
 This strategy helps keep the total number of operations low.
 
+
 ⭐ Bonus
+
 
 The project includes the checker:
 
@@ -56,6 +61,7 @@ ra, rb, rr
 rra, rrb, rrr
 
 ▶️ How to Compile
+
 make
 
 To compile the bonus:
