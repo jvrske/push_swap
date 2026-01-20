@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 11:26:22 by csilva            #+#    #+#             */
-/*   Updated: 2026/01/15 15:37:16 by csilva           ###   ########.fr       */
+/*   Updated: 2026/01/20 13:09:03 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	validate_input(int ac, char *s[])
 			return (1);
 		while (s[i][j])
 		{
-			if (ft_isdigit(s[i][j]) && ft_signal(s[i][j + 1]) &&
+			if (!ft_isdigit(s[i][j]) && ft_signal(s[i][j + 1]) &&
 				!ft_isspace(s[i][j]))
 				return (1);
-			if (!ft_signal(s[i][j]) && ft_isdigit(s[i][j + 1]))
+			if (ft_signal(s[i][j]) && !ft_isdigit(s[i][j + 1]))
 				return (1);
 			j++;
 		}

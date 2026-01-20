@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 13:51:15 by csilva            #+#    #+#             */
-/*   Updated: 2026/01/06 13:51:54 by csilva           ###   ########.fr       */
+/*   Updated: 2026/01/20 13:08:49 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
 
 int	ft_signal(char c)
 {
 	if (c == '-' || c == '+')
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
 
 int	ft_isspace(int c)

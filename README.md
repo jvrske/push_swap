@@ -1,77 +1,98 @@
-Push Swap
+*This project has been created as part of the 42 curriculum by csilva.*
 
-📌 Description
+# Push Swap
 
+## Description
 
-push_swap is a project whose goal is to sort a stack of integers using a limited set of instructions and two stacks: A and B.
-The challenge is to find the most efficient way possible (with the smallest number of moves) to sort the numbers in ascending order in stack A.
+**push_swap** is a sorting algorithm project whose objective is to sort a stack of integers in ascending order using a limited set of instructions and two stacks: **A** and **B**.
 
-This project was developed following all norm rules and includes the bonus part.
+The main challenge of the project is to minimize the number of operations required to perform the sorting while respecting the allowed instructions.
 
+This implementation fully complies with the 42 norm and includes the **bonus part**, featuring a checker program to validate the correctness of the operations.
 
-🧠 Strategy Used
+### Strategy Used
 
+#### Sending from A to B — Chunks
 
-🔹 Sending from A to B — Chunks
+- The stack is divided into chunks based on the sorted index of each number.
+- Elements belonging to the current chunk are pushed from stack A to stack B.
+- Rotations (`ra`, `rra`) are used to bring the target elements to the top efficiently.
+- This approach greatly reduces the number of operations for large inputs.
 
-To move numbers from stack A to stack B, I used the chunk strategy:
+#### Returning from B to A — Turk Algorithm
 
-The stack is divided into blocks (chunks) based on the sorted indices of the numbers.
+- Selects the most cost-efficient element to move from B to A.
+- Calculates the cost of each move, including combined rotations (`rr`, `rrr`).
+- Ensures elements are reinserted into stack A close to their final position.
 
-Numbers belonging to the current chunk are pushed to stack B.
+This combination keeps the total number of operations low and efficient.
 
-Depending on the position of the number, rotations (ra, rra) are used to optimize movements.
+## Instructions
 
-This approach significantly reduces the number of operations for large inputs.
+### Compilation
 
-🔹 Returning from B to A — Turk Algorithm
+Compile the mandatory part:
 
-To move numbers back from stack B to stack A, I used the Turk Algorithm:
-
-Always selects the most advantageous number to move from B to A.
-
-Calculates the cost of each move, considering simultaneous rotations (rr, rrr).
-
-Ensures that elements return to A already close to their correct position.
-
-This strategy helps keep the total number of operations low.
-
-
-⭐ Bonus
-
-
-The project includes the checker:
-
-Reads a sequence of instructions from standard input.
-
-Executes the instructions on the stacks.
-
-Checks whether stack A is sorted and stack B is empty at the end.
-
-Displays OK or KO depending on the result.
-
-🛠️ Allowed Instructions
-
-sa, sb, ss
-
-pa, pb
-
-ra, rb, rr
-
-rra, rrb, rrr
-
-▶️ How to Compile
-
+```bash
 make
+````
 
-To compile the bonus:
+Compile the bonus (checker):
 
+```bash
 make bonus
+```
 
-▶️ How to Run
+### Execution
 
-push_swap
+Run push_swap with a list of integers:
+
+```bash
 ./push_swap 3 2 1
+```
 
-checker
+Run with the checker:
+
+```bash
 ./push_swap 3 2 1 | ./checker 3 2 1
+```
+
+The checker outputs:
+
+* `OK` if stack A is sorted and stack B is empty
+* `KO` otherwise
+
+### Allowed Instructions
+
+* `sa`, `sb`, `ss`
+* `pa`, `pb`
+* `ra`, `rb`, `rr`
+* `rra`, `rrb`, `rrr`
+
+## Bonus
+
+The bonus includes a **checker** program that:
+
+* Reads instructions from standard input
+* Executes them on stacks A and B
+* Verifies that stack A is sorted and stack B is empty at the end
+
+## Resources
+
+### References
+
+* 42 Push Swap subject
+* Stack data structure documentation
+* Sorting algorithms and complexity analysis
+* Chunk-based sorting strategies
+* Discussions and articles about the Turk Algorithm
+
+### Use of AI
+
+AI tools were used for:
+
+* Understanding and reviewing algorithmic strategies
+* Improving documentation clarity and English writing
+* Structuring explanations for better readability
+
+All algorithmic logic, optimizations, and code implementation were written manually.

@@ -6,7 +6,7 @@
 /*   By: csilva <csilva@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 13:42:12 by csilva            #+#    #+#             */
-/*   Updated: 2026/01/16 08:04:10 by csilva           ###   ########.fr       */
+/*   Updated: 2026/01/19 08:31:30 by csilva           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ int	main(int ac, char *av[])
 	i = 1;
 	len = 0;
 	if (ac <= 1)
-		return ((write(2, "Error\n", 6), 0));
+		return (0);
 	while (av[i++])
 		len += ft_countnumbers(av[i - 1]);
 	if (parser(ac, av, &array))
 		return (write(2, "Error\n", 6), 0);
-	if (is_sorted(array, len))
-		return (free_all(NULL, NULL, array), 0);
 	a = stack_init_a(len, array);
 	b = stack_init_b(len);
 	if (!a || !b)
